@@ -79,7 +79,7 @@ If your training is accidentally stopped, you can resume at a checkpoint based o
 For example to resume training starting at iteration 10k, use the following command.
 
 ```
-python scripts/train_rpn_3d.py --config=kitti_3d_multi_main --restore=10000
+python scripts/train_rpn_3d_q.py
 ```
 
 ## Testing
@@ -89,7 +89,7 @@ We provide models for the main experiments on val1 / val2 / test data splits ava
 Testing requires paths to the configuration file and model weights, exposed variables near the top *scripts/test_rpn_3d.py*. To test a configuration and model, simply update the variables and run the test file as below. 
 
 ```
-python scripts/test_rpn_3d.py 
+python scripts/test_rpn_3d_q.py 
 ```
 
 ## Contact
