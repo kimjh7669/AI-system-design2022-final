@@ -19,22 +19,27 @@ np.set_printoptions(suppress=True)
 from lib.imdb_util import *
 
 test_list = [
-'kitti_3d_multi_quan2x2_resnet50_lr_head',]
-# 'kitti_3d_multi_quan4x4_resnet50',
-# 'kitti_3d_multi_quan8x8_resnet50',
-# 'kitti_3d_multi_quan16x16_resnet50_lr_head',]
-# 'kitti_3d_multi_quan8x8_resnet50_lr',]
+'kitti_3d_multi_quan2x2_resnet50',
+'kitti_3d_multi_quan4x4_resnet50',
+'kitti_3d_multi_quan8x8_resnet50',
+'kitti_3d_multi_quan16x16_resnet50',
+'kitti_3d_multi_quan2x2_resnet50_lr_head',
+'kitti_3d_multi_quan4x4_resnet50_lr_head',
+'kitti_3d_multi_quan8x8_resnet50_lr_head',
+'kitti_3d_multi_quan16x16_resnet50_lr_head',
+]
+
 model_weight_list = [
-    # 'model_10000_pkl',
-    # 'model_20000_pkl',
-    # 'model_30000_pkl',
-    # 'model_40000_pkl',
-    # 'model_50000_pkl',
-    # 'model_60000_pkl',
+    'model_10000_pkl',
+    'model_20000_pkl',
+    'model_30000_pkl',
+    'model_40000_pkl',
+    'model_50000_pkl',
+    'model_60000_pkl',
     'model_70000_pkl',
-    # 'model_80000_pkl',
-    # 'model_90000_pkl',
-    # 'model_100000_pkl',
+    'model_80000_pkl',
+    'model_90000_pkl',
+    'model_100000_pkl',
 ]
 for i in range(len(test_list)):
     test_file = test_list[i]

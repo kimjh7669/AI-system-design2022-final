@@ -85,7 +85,7 @@ def main(argv):
 
     # training network
     rpn_net, optimizer = init_training_model(conf, paths.output)
-    rpn_net.to(torch.device('cpu'))
+    
     # setup loss
     criterion_det = RPN_3D_loss(conf)
     

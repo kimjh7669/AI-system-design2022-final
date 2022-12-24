@@ -1651,25 +1651,18 @@ def test_kitti_3d_q(dataset_test, net, rpn_conf, results_path, test_path, result
         backbone_time += net.m_time_list[i] - net.s_time_list[i]
         head_time += net.l_time_list[i] - net.m_time_list[i]
         
-    # backbone_time = backbone_time/len(net.s_time_list)
-    # head_time = head_time/len(net.s_time_list)
-    # print("backbone:", backbone_time)
-    # print("head:", head_time)
-    
-    # # evaluate
-    # script = os.path.join(test_path, dataset_test, 'devkit', 'cpp', 'evaluate_object')
-    # with open(os.devnull, 'w') as devnull:
-    #     out = subprocess.check_output([script, results_path.replace('/data', '')], stderr=devnull)
+
+    # evaluate
+    script = os.path.join(test_path, dataset_test, 'devkit', 'cpp', 'evaluate_object')
+    with open(os.devnull, 'w') as devnull:
+        out = subprocess.check_output([script, results_path.replace('/data', '')], stderr=devnull)
     
     try:
         name = rpn_conf['model_weight']
     except:
         name = "result"
     file = open(os.path.join(results_save_path, name + '.txt'), 'w')
-    # file.write("backbon_time: "+str(backbone_time)+ '\n')
-    # file.write("head_time: "+str(head_time)+ '\n')
-    print(results_path)
-    print(rpn_conf.lbls)
+
     for lbl in rpn_conf.lbls:
 
         lbl = lbl.lower()
