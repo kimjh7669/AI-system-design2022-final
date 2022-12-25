@@ -15,7 +15,7 @@ Our framework is implemented and tested with Ubuntu 18.04, CUDA 11.3, Python 3.7
 
 - **Cuda & Python**
 
-    In this project we utilize Pytorch with Python 3.7, Cuda 11.3, and a few Anaconda packages. Please review and follow this [installation guide](setup.md). However, feel free to try alternative versions or modes of installation. 
+    In this project we utilize Pytorch with Python 3.7, Cuda 11.3, and a few Anaconda packages. However, feel free to try alternative versions or modes of installation. 
 
 - **Data**
 
