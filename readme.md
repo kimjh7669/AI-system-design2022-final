@@ -1,30 +1,15 @@
 # HYU 2022 AI system design Final project
 
 ## Junhgo Kim, Junyong Yun
+### LSQ on Monocular 3D Object Detection
 
-## LSQ on Monocular 3D Object Detection
-
-M3D-RPN: Monocular 3D Region Proposal Network for Object Detection
-
-Garrick Brazil, Xiaoming Liu
+- M3D-RPN: Monocular 3D Region Proposal Network for Object Detection, Garrick, 2019, CVPR
+- Learned step size quantization, Esser, 2019, arXiv
 
 ## Introduction
 
-
-Monocular 3D region proposal network source code as detailed in [arXiv report](https://arxiv.org/abs/1907.06038), accepted to ICCV 2019 (Oral). Please also visit our [project page](http://cvlab.cse.msu.edu/project-m3d-rpn.html).
-
 Our framework is implemented and tested with Ubuntu 16.04, CUDA 8.0, Python 3, NVIDIA 1080 Ti GPU. Unless otherwise stated the below scripts and instructions assume working directory is the project root. 
 
-If you utilize this framework, please cite our ICCV 2019 paper. 
-
-    @inproceedings{brazil2019m3drpn,
-        title={M3D-RPN: Monocular 3D Region Proposal Network for Object Detection},
-        author={Brazil, Garrick and Liu, Xiaoming},
-        booktitle={Proceedings of the IEEE International Conference on Computer Vision},
-        address={Seoul, South Korea},
-        year={2019}
-    }
-    
 
 ## Setup
 
@@ -90,13 +75,8 @@ python scripts/train_rpn_3d_q.py
 
 ## Testing
 
-We provide models for the main experiments on val1 / val2 / test data splits available to download here [M3D-RPN-Release.zip](https://www.cse.msu.edu/computervision/M3D-RPN-Release.zip).
-
 Testing requires paths to the configuration file and model weights, exposed variables near the top *scripts/test_rpn_3d.py*. To test a configuration and model, simply update the variables and run the test file as below. 
 
 ```
 python scripts/test_rpn_3d_q.py 
 ```
-
-## Contact
-For questions regarding M3D-RPN, feel free to post here or directly contact the authors {[brazilga](http://garrickbrazil.com), [liuxm](http://www.cse.msu.edu/~liuxm/index2.html)}@msu.edu.
