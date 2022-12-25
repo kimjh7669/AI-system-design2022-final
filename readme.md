@@ -1,4 +1,10 @@
-# M3D-RPN: Monocular 3D Region Proposal Network for Object Detection
+# HYU 2022 AI system design Final project
+
+## Junhgo Kim, Junyong Yun
+
+## LSQ on Monocular 3D Object Detection
+
+M3D-RPN: Monocular 3D Region Proposal Network for Object Detection
 
 Garrick Brazil, Xiaoming Liu
 
