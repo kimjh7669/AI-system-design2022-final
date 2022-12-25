@@ -8,14 +8,14 @@
 
 ## Introduction
 
-Our framework is implemented and tested with Ubuntu 16.04, CUDA 8.0, Python 3, NVIDIA 1080 Ti GPU. Unless otherwise stated the below scripts and instructions assume working directory is the project root. 
+Our framework is implemented and tested with Ubuntu 18.04, CUDA 11.3, Python 3.7, Pytorch 1.12.1, NVIDIA 1080 Ti GPU. Unless otherwise stated the below scripts and instructions assume working directory is the project root. 
 
 
 ## Setup
 
 - **Cuda & Python**
 
-    In this project we utilize Pytorch with Python 3, Cuda 8, and a few Anaconda packages. Please review and follow this [installation guide](setup.md). However, feel free to try alternative versions or modes of installation. 
+    In this project we utilize Pytorch with Python 3.7, Cuda 11.3, and a few Anaconda packages. Please review and follow this [installation guide](setup.md). However, feel free to try alternative versions or modes of installation. 
 
 - **Data**
 
@@ -50,24 +50,20 @@ Our framework is implemented and tested with Ubuntu 16.04, CUDA 8.0, Python 3, N
 ## Training
 
 We use [visdom](https://github.com/facebookresearch/visdom) for visualization and graphs. Optionally, start the server by command line
-
 ```
 python -m visdom.server -port 8100 -readonly
 ```
 The port can be customized in *scripts/config* files. The training monitor can be viewed at [http://localhost:8100](http://localhost:8100)
 
-Training is split into a warmup and main configurations. Review the configurations in *scripts/config* for details. 
+First train resnet50 baseline model with below command.
 
-``` 
-// First train the warmup (without depth-aware)
-python scripts/train_rpn_3d.py --config=kitti_3d_multi_warmup
-
-// Then train the main experiment (with depth-aware)
-python scripts/train_rpn_3d.py --config=kitti_3d_multi_main
+```
+python scripts/train_rpn_3d.py
 ```
 
-If your training is accidentally stopped, you can resume at a checkpoint based on the snapshot with the *restore* flag. 
-For example to resume training starting at iteration 10k, use the following command.
+After training baseline, change the baseline weight directory to traing LSQ.
+
+The LSQ model can be trained with below command.
 
 ```
 python scripts/train_rpn_3d_q.py
@@ -75,7 +71,7 @@ python scripts/train_rpn_3d_q.py
 
 ## Testing
 
-Testing requires paths to the configuration file and model weights, exposed variables near the top *scripts/test_rpn_3d.py*. To test a configuration and model, simply update the variables and run the test file as below. 
+Testing requires paths to the configuration file and model weights, exposed variables near the top *scripts/test_rpn_3d_q.py*. To test a configuration and model, simply update the variables and run the test file as below. 
 
 ```
 python scripts/test_rpn_3d_q.py 
